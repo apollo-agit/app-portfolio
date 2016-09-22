@@ -1,6 +1,7 @@
 /**
  * webpack configuration for local dev builds and ambient 
  * server and watch configurations
+ * This webpack config will merge with the common webpack conf
  */
 var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
@@ -15,6 +16,7 @@ var helpers = require('./helpers');
  * Setting environments
  */
 const ENV = process.env.ENV = process.env.NODE_ENV = 'development';
+
 const HMR = process.argv.join('').indexOf('hot') > -1;
 const METADATA = {
     title: 'App Portfolio',
@@ -39,7 +41,7 @@ module.exports = webpackMerge(commonConfig, {
 
 
     output: {
-        path: helpers.root('dist'),
+        path: helpers.root('dist/public'),
         publicPath: 'http://localhost:8080/',
         filename: '[name].js',
         chunkFilename: '[id].chunk.js'

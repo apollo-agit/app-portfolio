@@ -1,0 +1,10 @@
+/* main sass 
+*/
+
+@import 'core.scss';
+@import 'palette';
+@import 'button.scss';
+@import 'button-theme';
+
+@include md-button-theme($md-red);
+
