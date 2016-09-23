@@ -37,7 +37,9 @@ module.exports = {
         includePaths: [
             path.resolve(__dirname, '../node_modules/@angular2-material/button/'),
             path.resolve(__dirname, '../node_modules/@angular2-material/core/style'),
-            path.resolve(__dirname, '../node_modules/@angular2-material/card/')
+            path.resolve(__dirname, '../node_modules/@angular2-material/card/'),
+            path.resolve(__dirname, '../node_modules/@angular2-material/toolbar/'),
+            path.resolve(__dirname, '../node_modules/@angular2-material/icon/')
         ]
     },
 

@@ -2,9 +2,9 @@
 */
 
 @import 'core.scss';
+@import 'theme-functions';
 @import 'palette';
 @import 'button.scss';
-@import 'button-theme';
-
-@include md-button-theme($md-red);
+@import 'icon.scss';
+@import 'toolbar.scss';
 
