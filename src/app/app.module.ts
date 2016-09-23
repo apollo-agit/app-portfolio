@@ -5,7 +5,9 @@ import { FormsModule }    from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SharedMdModule } from './common/md.module';
 import { appRoutes, appRoutingProviders } from './common/app.routes';
+
 import { DashboardModule } from './dashboard/dashboard.module';
+import { StoryBoardModule } from './storyboard/storyboard.module';
 
 
 
@@ -15,7 +17,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     SharedMdModule,
     FormsModule,
     appRoutes,
-    DashboardModule
+    DashboardModule,
+    StoryBoardModule
   ],
   declarations: [
     AppComponent

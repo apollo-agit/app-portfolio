@@ -6,10 +6,11 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { Dashboard } from '../dashboard/dashboard.view.component';
+import { StoryBoard } from '../storyboard/storyboard.view.component';
 
 const routes: Routes = [
-	{ path: '', component: Dashboard }
-
+	{ path: '', component: Dashboard },
+	{ path: 'storyboard', component: StoryBoard }
 ]
 
 export const appRoutingProviders: any[] = [];
