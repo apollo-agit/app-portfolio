@@ -1,0 +1,8 @@
+<div>
+<form (ngSubmit)="onSubmit()" #storyForm="ngForm">
+    <input type="text" id="storyTitle" required [(ngModel)]="story.title" name="title">
+    <input type="text" id="storyDescription" required [(ngModel)]="story.description" name="description">
+    <input type="text" id="points" required [(ngModel)]="story.points" name="points">
+    <button type="submit" >Add</button> 
+</form> 
+</div>

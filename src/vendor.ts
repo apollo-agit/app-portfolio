@@ -20,3 +20,6 @@ import '@angular2-material/icon';
 
 // RxJS
 import 'rxjs';
+
+//Redux State Tree
+import 'redux';

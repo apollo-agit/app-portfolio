@@ -1,1 +1,7 @@
 <md-toolbar>Story Board</md-toolbar>
+<story-edit></story-edit>
+
+
+	<div *ngFor="let story of stories">
+		<story-card [story]="story"></story-card>
+	</div>
