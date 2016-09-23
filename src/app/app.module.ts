@@ -1,23 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+
 import { AppComponent } from './app.component';
-import {MdToolbarModule} from '@angular2-material/toolbar';
-import {MdButtonModule} from '@angular2-material/button';
-import {MdCardModule} from '@angular2-material/card';
-import {MdIconModule} from '@angular2-material/icon';
+import { SharedMdModule } from './common/md.module';
+import { appRoutes, appRoutingProviders } from './common/app.routes';
+import { DashboardModule } from './dashboard/dashboard.module';
+
+
 
 @NgModule({
   imports: [
     BrowserModule,
-    MdToolbarModule.forRoot(),
-    MdButtonModule.forRoot(),
-    MdCardModule.forRoot(),
-    MdIconModule.forRoot()
+    SharedMdModule,
+    FormsModule,
+    appRoutes,
+    DashboardModule
   ],
   declarations: [
     AppComponent
   ],
-  bootstrap: [ AppComponent]
+  providers: [
+    appRoutingProviders
+  ],
+  bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }

@@ -1,5 +1,4 @@
 /* Common webpack configuration*/
-var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -35,11 +34,11 @@ module.exports = {
 
     sassLoader: {
         includePaths: [
-            path.resolve(__dirname, '../node_modules/@angular2-material/button/'),
-            path.resolve(__dirname, '../node_modules/@angular2-material/core/style'),
-            path.resolve(__dirname, '../node_modules/@angular2-material/card/'),
-            path.resolve(__dirname, '../node_modules/@angular2-material/toolbar/'),
-            path.resolve(__dirname, '../node_modules/@angular2-material/icon/')
+            helpers.root('node_modules/@angular2-material/button/'),
+            helpers.root('node_modules/@angular2-material/core/style'),
+            helpers.root('node_modules/@angular2-material/card/'),
+            helpers.root('node_modules/@angular2-material/toolbar/'),
+            helpers.root('node_modules/@angular2-material/icon/')
         ]
     },
 
