@@ -7,7 +7,6 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { createStore } from 'redux';
 
-import { SharedMdModule } from '../common/md.module';
 import { appRoutes, appRoutingProviders } from '../common/app.routes';
 
 import { StoryBoard } from './storyboard.view.component';
@@ -22,8 +21,7 @@ const storyStore = createStore(storyReducer);
 	 imports: [
 	    BrowserModule,
 	    FormsModule,
-	    appRoutes,
-	    SharedMdModule
+	    appRoutes
 	  ],
 	  declarations: [
 	    StoryBoard,

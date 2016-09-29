@@ -10,13 +10,11 @@ import '@angular/common';
 import '@angular/http';
 import '@angular/router';
 
-//material design
-import 'hammerjs/hammer.js'
-import '@angular2-material/core';
-import '@angular2-material/button';
-import '@angular2-material/card';
-import '@angular2-material/toolbar';
-import '@angular2-material/icon';
+//prime ng
+import 'primeng/primeng';
+require('../node_modules/primeng/resources/themes/le-frog/theme.css');
+require('../node_modules/primeng/resources/primeng.css');
+
 
 // RxJS
 import 'rxjs';
