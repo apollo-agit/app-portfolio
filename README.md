@@ -4,6 +4,8 @@
 
 ### How to install
 
+_The following is done using your pc terminal console_
+
 * `git clone https://gitlab.com/rebeltechnologies/app-portfolio.git`
 * cd to cloned directory
 * `npm install`
