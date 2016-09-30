@@ -12,9 +12,7 @@ export function storyReducer(state = initialState, action: StoryActionModel) {
 
 	switch(action.type) {
 		case AvailableStoryActions.ADD_STORY: 
-		console.log(3);
 		let story = action.storyBoardModel;
-		console.log(story);
 		return {
 			stories: state.stories.concat(story)
 		}		

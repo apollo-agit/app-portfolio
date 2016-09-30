@@ -5,7 +5,8 @@
 export interface StoryModel {
 	title: string,
 	description: string, 
-	points: number
+	points: number,
+	phase: number
 }
 
 export interface StoryActionModel {
@@ -22,7 +23,6 @@ export class StoryBoardActions {
 	constructor() {	}
 	
 	addStory(story: StoryModel): StoryActionModel {
-		console.log(2);
 		return { type: AvailableStoryActions.ADD_STORY, storyBoardModel: story };
 	}
 

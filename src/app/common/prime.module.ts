@@ -3,17 +3,28 @@
 */
 import { NgModule } from '@angular/core';
 
+import { ButtonModule } from 'primeng/primeng'; 
 import { SplitButtonModule } from 'primeng/primeng';
-import {DropdownModule} from 'primeng/primeng';
+import { DropdownModule } from 'primeng/primeng';
+import { OverlayPanelModule } from 'primeng/primeng';
+import { DragDropModule } from 'primeng/primeng';
+
+
 
 @NgModule({
 	imports: [
+		ButtonModule,
 	    SplitButtonModule,
-	    DropdownModule
+	    DropdownModule,
+	    OverlayPanelModule,
+	    DragDropModule
 	    ],
 	exports: [
+			ButtonModule,
 	    	SplitButtonModule,
-	    	DropdownModule
+	    	DropdownModule,
+	    	OverlayPanelModule,
+	    	DragDropModule
 	    ]
 })
 export class PrimeModule { }

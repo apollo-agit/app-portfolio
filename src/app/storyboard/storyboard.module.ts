@@ -8,12 +8,14 @@ import { FormsModule }    from '@angular/forms';
 import { createStore } from 'redux';
 
 import { appRoutes, appRoutingProviders } from '../common/app.routes';
+import { PrimeModule } from '../common/prime.module';
 
 import { StoryBoard } from './storyboard.view.component';
 import { storyReducer } from './storyboard.reducer';
 import { StoryBoardActions } from './story.model';
 import { StoryEdit } from './story.edit.component';
 import { StoryCard } from './story.card.component';
+import { StoryPhasePipe } from './story.phase.filter';
 
 const storyStore = createStore(storyReducer);
 
@@ -21,17 +23,20 @@ const storyStore = createStore(storyReducer);
 	 imports: [
 	    BrowserModule,
 	    FormsModule,
-	    appRoutes
+	    appRoutes,
+	    PrimeModule
 	  ],
 	  declarations: [
 	    StoryBoard,
 	    StoryEdit,
-	    StoryCard
+	    StoryCard,
+	    StoryPhasePipe
 	  ],
 	  providers: [
 	    appRoutingProviders,
 	    StoryBoardActions,
-	    { provide: 'StoryStore', useValue: storyStore}
+	    { provide: 'StoryStore', useValue: storyStore},
+	    StoryPhasePipe
 	  ],
 	  bootstrap: [ StoryBoard ]
 

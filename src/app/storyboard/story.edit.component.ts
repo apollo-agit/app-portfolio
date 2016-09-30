@@ -22,7 +22,7 @@ export class StoryEdit {
 
 	onSubmit()  {
 		let model: StoryModel = {title: this.story.title, description: this.story.description, 
-			points: this.story.points};
+			points: this.story.points, phase: 1};
 		this.storyStore.dispatch(this.storyBoardActions.addStory(model));
 	}
 }
