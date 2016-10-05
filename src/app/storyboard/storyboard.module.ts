@@ -12,12 +12,15 @@ import { PrimeModule } from '../common/prime.module';
 
 import { StoryBoard } from './storyboard.view.component';
 import { storyReducer } from './storyboard.reducer';
-import { StoryBoardActions } from './story.model';
+import { StoryBoardActions, StoryModel } from './story.model';
 import { StoryEdit } from './story.edit.component';
 import { StoryCard } from './story.card.component';
 import { StoryPhasePipe } from './story.phase.filter';
+import { DataService } from '../common/data.service';
 
 const storyStore = createStore(storyReducer);
+
+let storyDataService = new DataService<StoryModel>();
 
 @NgModule({
 	 imports: [
@@ -36,6 +39,8 @@ const storyStore = createStore(storyReducer);
 	    appRoutingProviders,
 	    StoryBoardActions,
 	    { provide: 'StoryStore', useValue: storyStore},
+	    { provide: 'storyDataService', useValue: storyDataService},
+	    DataService,
 	    StoryPhasePipe
 	  ],
 	  bootstrap: [ StoryBoard ]
