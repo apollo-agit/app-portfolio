@@ -9,6 +9,7 @@ import { StoryBoardModule } from './storyboard/storyboard.module';
 
 import { PrimeModule } from './common/prime.module';
 
+import { FormExampleModule } from './form_example/form-example.module'; // added by Devesh
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { PrimeModule } from './common/prime.module';
     DashboardModule,
     StoryBoardModule,
     PrimeModule
+    , FormExampleModule //added by Devesh
   ],
   declarations: [
     AppComponent
