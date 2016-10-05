@@ -15,7 +15,6 @@ import 'primeng/primeng';
 require('../node_modules/primeng/resources/themes/le-frog/theme.css');
 require('../node_modules/primeng/resources/primeng.css');
 
-
 // RxJS
 import 'rxjs';
 
