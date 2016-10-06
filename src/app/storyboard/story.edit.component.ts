@@ -4,6 +4,7 @@
 
 import {Component, Inject} from '@angular/core';
 import { StoryBoardActions, StoryModel } from './story.model';
+import { StoryBackingObjectService } from './story.backing.object.service';
 
 @Component({
 	selector: 'story-edit',
@@ -15,15 +16,15 @@ export class StoryEdit {
 
 	story: storyInput;
 
-	constructor(@Inject('StoryStore') private storyStore,
-		private storyBoardActions: StoryBoardActions) {
+	constructor(private _storyBackingObjectService: StoryBackingObjectService) {
 			this.story = {title: '', description: '', points: 0};
 		}
 
 	onSubmit()  {
 		let model: StoryModel = {title: this.story.title, description: this.story.description, 
 			points: this.story.points, phase: 1};
-		this.storyStore.dispatch(this.storyBoardActions.addStory(model));
+			console.log('what?')
+		this._storyBackingObjectService.add(model);
 	}
 }
 

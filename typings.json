@@ -6,5 +6,8 @@
   },
   "ambientDependencies": {
     "hammerjs": "registry:dt/hammerjs#2.0.8+20160724063812"
+  },
+  "dependencies": {
+    "immutable": "registry:npm/immutable#3.7.6+20160411060006"
   }
 }

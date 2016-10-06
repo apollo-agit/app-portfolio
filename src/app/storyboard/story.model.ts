@@ -1,6 +1,7 @@
 /*
 * Data Model and Model actions for Story Board objects
 */
+import { Inject, Injectable } from '@angular/core';
 import { UUID } from 'angular2-uuid';
 
 export interface StoryModel {
@@ -28,6 +29,8 @@ export enum AvailableStoryActions {
 	FETCH_ERROR
 }
 
+
+@Injectable()
 export class StoryBoardActions {
 
 	constructor() {	}
