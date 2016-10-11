@@ -5,37 +5,9 @@
 <button type="button" pButton label="Basic" (click)="op1.toggle($event)"></button>
 <div class="ui-grid ui-grid-pad ui-grid-responsive">
     <div class="ui-grid-row">
-        <div class="ui-grid-col-6 ui-widget-content" style="border-right:0 none" pDroppable="stories" (onDrop)="drop($event, '1')">
-            <ul style="margin:0;padding:0">
-                <li *ngFor="let story of (stories | StoryPhase:'1')" class="ui-state-default ui-helper-clearfix" pDraggable="stories" (onDragStart)="dragStart($event,story)" (onDragEnd)="dragEnd($event)">
-                    <i class="fa fa-arrows fa-2x" style="float:right;margin-top:8px"></i>
-                    <div style="margin:8px 0 0 8px;float:left">{{story.title}} - {{story.phase}}</div>
-                </li>
-            </ul>
-        </div>
-        <div class="ui-grid-col-6 ui-widget-content" pDroppable="stories" (onDrop)="drop($event, '2')" [ngClass]="{'ui-state-highlight':draggedStory}">
-            <ul style="margin:0;padding:0">
-                <li *ngFor="let story of (stories | StoryPhase:'2')" class="ui-state-default ui-helper-clearfix" pDraggable="stories" (onDragStart)="dragStart($event,story)" (onDragEnd)="dragEnd($event)">
-                    <i class="fa fa-arrows fa-2x" style="float:right;margin-top:8px"></i>
-                    <div style="margin:8px 0 0 8px;float:left">{{story.title}} - {{story.phase}}</div>
-                </li>
-            </ul>
-        </div>
-        <div class="ui-grid-col-6 ui-widget-content" pDroppable="stories" (onDrop)="drop($event, '3')" [ngClass]="{'ui-state-highlight':draggedStory}">
-            <ul style="margin:0;padding:0">
-                <li *ngFor="let story of (stories | StoryPhase:'3')" class="ui-state-default ui-helper-clearfix" pDraggable="stories" (onDragStart)="dragStart($event,story)" (onDragEnd)="dragEnd($event)">
-                    <i class="fa fa-arrows fa-2x" style="float:right;margin-top:8px"></i>
-                    <div style="margin:8px 0 0 8px;float:left">{{story.title}} - {{story.phase}}</div>
-                </li>
-            </ul>
-        </div>
-        <div class="ui-grid-col-6 ui-widget-content" pDroppable="stories" (onDrop)="drop($event, '4')" [ngClass]="{'ui-state-highlight':draggedStory}">
-            <ul style="margin:0;padding:0">
-                <li *ngFor="let story of (stories | StoryPhase:'4')" class="ui-state-default ui-helper-clearfix" pDraggable="stories" (onDragStart)="dragStart($event,story)" (onDragEnd)="dragEnd($event)">
-                    <i class="fa fa-arrows fa-2x" style="float:right;margin-top:8px"></i>
-                    <div style="margin:8px 0 0 8px;float:left">{{story.title}} - {{story.phase}}</div>
-                </li>
-            </ul>
-        </div>
+        <storyboard-lane phase='1' class="flow"></storyboard-lane>
+        <storyboard-lane phase='2' class="flow"></storyboard-lane>
+        <storyboard-lane phase='3' class="flow"></storyboard-lane>
+        <storyboard-lane phase='4' class="flow"></storyboard-lane>
     </div>
 </div>

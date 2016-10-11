@@ -25,6 +25,8 @@ export abstract class AbstractReducer<T> {
 
 	public abstract modify(obj: T, callback?: CallbackFunction<T>): void;
 
+	public abstract remove(obj: T): void;
+
 }
 
 export interface CallbackFunction<T> {
