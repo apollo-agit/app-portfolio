@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { FormExample} from './form-example.model';
+import { FormExample } from './form-example.model';
 
 
 
@@ -8,7 +8,7 @@ import { FormExample} from './form-example.model';
 
 
 @Component ( {
-	//moduleId: module.id,
+	
 	selector: 'form-example',
 	templateUrl: './form-example.view.component.html'
 

@@ -1,11 +1,13 @@
-
+{{diagnostic}}
 <div class="container">
   <h1>See if it shows up</h1>
     <h1>Form Example</h1>
     <form>
       <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstname" required>
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" 
+        required
+        class="form-control" name="firstname" name="firstname">
       </div>
       <div class="form-group">
         <label for="lastName">Last Name</label>
@@ -18,3 +20,10 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
+<br>
+<br>
+    <div>
+         <button class="md-button" (click)="goBack()">Back</button>
+    </div>
+
+

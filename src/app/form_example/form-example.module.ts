@@ -3,7 +3,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { appRoutes, appRoutingProviders } from '../common/app.routes';
 import { FormsModule } from '@angular/Forms';
 import { FormExampleComponent } from './form-example.view.component';
-import { FormExampleCard} from './form-example.card.component';
+import { FormExampleFormComponent } from './form-example.form.component';
 
 
 
@@ -15,8 +15,9 @@ import { FormExampleCard} from './form-example.card.component';
     FormsModule
   ],
   declarations: [
-    FormExampleComponent,
-    FormExampleCard
+    FormExampleFormComponent,
+    FormExampleComponent
+    
   ],
   providers: [
     appRoutingProviders
