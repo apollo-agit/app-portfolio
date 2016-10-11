@@ -3,7 +3,9 @@
 */
 import { Component, OnDestroy, OnInit, Inject } from '@angular/core';
 
-import { StoryModel, StoryBoardActions } from './story.model';
+import { StoryModel } from './story.model';
+import { AbstractReducer } from '../common/abstract.reducer';
+
 
 @Component({
 	templateUrl: './storyboard.view.component.html'
@@ -12,28 +14,16 @@ import { StoryModel, StoryBoardActions } from './story.model';
 export class StoryBoard implements OnDestroy {
 
 	stories: StoryModel[];
-
 	draggedStory: StoryModel;
 
-	constructor(@Inject('storyDataService') private storyBoardDataService, 
-		@Inject('StoryStore') private storyStore,
-		private storyBoardActions: StoryBoardActions) {
-
-		this.storyStore.subscribe(() => {
-			let state = this.storyStore.getState();
-			this.stories = state.stories;
-			//this needs to have an async call (observable)
-			this.storyBoardDataService.putData("stories", this.stories);
+	constructor(@Inject('StoryStore') private _storyBackingObjectService: AbstractReducer<StoryModel> ) {
+		this._storyBackingObjectService.backingObject.subscribe(data => {
+			this.stories = data;
 		});
 	}
 
 	ngOnInit() {
-		//this needs to have an async call (observable)
-		 let stories = this.storyBoardDataService.getData("stories");
-
-		 for(let story of stories) {
-			this.storyStore.dispatch(this.storyBoardActions.addStory(story));
-		 }
+		this._storyBackingObjectService.load();
 	}
 
 	ngOnDestroy() {
@@ -45,7 +35,11 @@ export class StoryBoard implements OnDestroy {
 	}
 
 	drop(event, phaseNumber) {
-		this.storyStore.dispatch(this.storyBoardActions.moveStory(this.draggedStory, phaseNumber));
+		this.draggedStory.phase = phaseNumber;
+		this._storyBackingObjectService.modify(this.draggedStory, (value) => {
+			 value.phase = this.draggedStory.phase;
+			 return value;
+		});
 	}
 
 	dragEnd(event) {

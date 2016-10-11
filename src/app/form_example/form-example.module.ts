@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { appRoutes, appRoutingProviders } from '../common/app.routes';
-import { FormsModule } from '@angular/Forms';
+import { FormsModule } from '@angular/forms';
 import { FormExampleComponent } from './form-example.view.component';
 import { FormExampleFormComponent } from './form-example.form.component';
 

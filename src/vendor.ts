@@ -18,5 +18,5 @@ require('../node_modules/primeng/resources/primeng.css');
 // RxJS
 import 'rxjs';
 
-//Redux State Tree
-import 'redux';
+//Immutable JS
+import 'immutable';
