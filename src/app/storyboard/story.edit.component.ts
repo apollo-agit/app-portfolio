@@ -3,8 +3,8 @@
 */
 
 import {Component, Inject} from '@angular/core';
-import { StoryBoardActions, StoryModel } from './story.model';
-import { StoryBackingObjectService } from './story.backing.object.service';
+import { StoryModel } from './story.model';
+import { AbstractReducer } from '../common/abstract.reducer';
 
 @Component({
 	selector: 'story-edit',
@@ -16,14 +16,13 @@ export class StoryEdit {
 
 	story: storyInput;
 
-	constructor(private _storyBackingObjectService: StoryBackingObjectService) {
+	constructor(@Inject('StoryStore') private _storyBackingObjectService: AbstractReducer<StoryModel>) {
 			this.story = {title: '', description: '', points: 0};
 		}
 
 	onSubmit()  {
 		let model: StoryModel = {title: this.story.title, description: this.story.description, 
 			points: this.story.points, phase: 1};
-			console.log('what?')
 		this._storyBackingObjectService.add(model);
 	}
 }

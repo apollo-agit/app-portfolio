@@ -4,7 +4,7 @@
 import { Component, OnDestroy, OnInit, Inject } from '@angular/core';
 
 import { StoryModel } from './story.model';
-import { StoryBackingObjectService } from './story.backing.object.service';
+import { AbstractReducer } from '../common/abstract.reducer';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class StoryBoard implements OnDestroy {
 	stories: StoryModel[];
 	draggedStory: StoryModel;
 
-	constructor(private _storyBackingObjectService: StoryBackingObjectService) {
+	constructor(@Inject('StoryStore') private _storyBackingObjectService: AbstractReducer<StoryModel> ) {
 		this._storyBackingObjectService.backingObject.subscribe(data => {
 			this.stories = data;
 		});
@@ -35,7 +35,11 @@ export class StoryBoard implements OnDestroy {
 	}
 
 	drop(event, phaseNumber) {
-		//this.storyStore.dispatch(this.storyBoardActions.moveStory(this.draggedStory, phaseNumber));
+		this.draggedStory.phase = phaseNumber;
+		this._storyBackingObjectService.modify(this.draggedStory, (value) => {
+			 value.phase = this.draggedStory.phase;
+			 return value;
+		});
 	}
 
 	dragEnd(event) {

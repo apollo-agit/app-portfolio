@@ -12,17 +12,13 @@ import { appRoutes, appRoutingProviders } from '../common/app.routes';
 import { PrimeModule } from '../common/prime.module';
 
 import { StoryBoard } from './storyboard.view.component';
-import { storyReducer } from './storyboard.reducer';
-import { StoryBoardActions, StoryModel } from './story.model';
 import { StoryEdit } from './story.edit.component';
 import { StoryCard } from './story.card.component';
 import { StoryPhasePipe } from './story.phase.filter';
 
-import { StoryBackingObjectService } from './story.backing.object.service';
+import { LocalStorageReducer } from '../common/localstorage.reducer';
 
-//const storyStore = createStore(storyReducer);
-
-//let storyDataService = new DataService<StoryModel>();
+let storyReducer = new LocalStorageReducer("stories");
 
 @NgModule({
 	 imports: [
@@ -39,11 +35,7 @@ import { StoryBackingObjectService } from './story.backing.object.service';
 	  ],
 	  providers: [
 	    appRoutingProviders,
-	    StoryBoardActions,
-	    StoryBackingObjectService
-//	    { provide: 'StoryStore', useValue: storyStore},
-//	    { provide: 'storyDataService', useValue: storyDataService},
-//	    DataService
+	    { provide: 'StoryStore', useValue: storyReducer},
 	  ],
 	  bootstrap: [ StoryBoard ]
 
