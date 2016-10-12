@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { FormExampleComponent } from './form-example.view.component';
 import { FormExampleFormComponent } from './form-example.form.component';
 
+import { FormExampleChild } from './form-example.form.child';
+
 
 
 
@@ -16,7 +18,8 @@ import { FormExampleFormComponent } from './form-example.form.component';
   ],
   declarations: [
     FormExampleFormComponent,
-    FormExampleComponent
+    FormExampleComponent,
+    FormExampleChild
     
   ],
   providers: [

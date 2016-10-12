@@ -8,11 +8,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { Dashboard } from '../dashboard/dashboard.view.component';
 import { StoryBoard } from '../storyboard/storyboard.view.component';
 import { FormExampleComponent} from '../form_example/form-example.view.component'; // added by Devesh
+import { FormExampleChild } from '../form_example/form-example.form.child'; // added by Devesh
 
 const routes: Routes = [
 	{ path: '', component: Dashboard },
 	{ path: 'storyboard', component: StoryBoard }
 	, {path: 'form', component: FormExampleComponent} //added by Devesh
+	, {path: 'form-child', component: FormExampleChild} // added by Devesh 
 ]
 
 export const appRoutingProviders: any[] = [];

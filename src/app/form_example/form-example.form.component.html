@@ -1,29 +1,32 @@
-{{diagnostic}}
 <div class="container">
   <h1>See if it shows up</h1>
     <h1>Form Example</h1>
-    <form>
+    <form (ngSubmit)="onSubmit()" #formModel = "ngForm">
       <div class="form-group">
-        <label for="firstname">First Name</label>
-        <input type="text" id="firstname" 
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName"
         required
-        class="form-control" name="firstname" name="firstname">
+        class="form-control" name="firstName"
+        [(ngModel)] = "formModel.firstName" >
       </div>
       <div class="form-group">
         <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastname">
+        <input type="text" class="form-control" id="lastName" name="lastName"
+        [(ngModel)] = "formModel.lastName">
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" class="form-control" id="email">
+        <input type="text" class="form-control" id="email" name="email"
+        [(ngModel)] = "formModel.email">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="Submit" name="btnSubmit" class="btn btn-default">Submit</button>
     </form>
 </div>
 <br>
 <br>
     <div>
-         <button class="md-button" (click)="goBack()">Back</button>
+         <button type="button" name="backButton" class="md-button" (click)="goBack()">Back</button>
     </div>
-
+<form-example-child [childTitle]="'form-example-child'" [childLink]="'form-child'" [firstName]='formModel.firstName' [lastName]='formModel.lastName' [email]='formModel.email'>  
+</form-example-child>
 
