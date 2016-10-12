@@ -1,48 +1,27 @@
 /*
 * Main view component for the story board application
 */
-import { Component, OnDestroy, OnInit, Inject } from '@angular/core';
+import { Component, AfterViewInit, Inject } from '@angular/core';
 
 import { StoryModel } from './story.model';
-import { AbstractReducer } from '../common/abstract.reducer';
+import { FluxReducer } from '../common/flux.reducer';
+import { PassThroughService } from '../common/pass.through.service';
 
 
 @Component({
-	templateUrl: './storyboard.view.component.html'
+	templateUrl: './storyboard.view.component.html',
+	providers: [
+		{ provide: 'key', useValue: 'drag' },
+		{ provide: 'DragStore', useClass: FluxReducer }
+	]
 })
 
-export class StoryBoard implements OnDestroy {
+export class StoryBoard implements AfterViewInit {	
 
-	stories: StoryModel[];
-	draggedStory: StoryModel;
+	constructor(@Inject('StoryStore') private _reducer: FluxReducer<StoryModel> ) {	}
 
-	constructor(@Inject('StoryStore') private _storyBackingObjectService: AbstractReducer<StoryModel> ) {
-		this._storyBackingObjectService.backingObject.subscribe(data => {
-			this.stories = data;
-		});
+	ngAfterViewInit() {
+		this._reducer.load();
 	}
-
-	ngOnInit() {
-		this._storyBackingObjectService.load();
-	}
-
-	ngOnDestroy() {
-		this.draggedStory = null;
-	}
-
-	dragStart($event, story: StoryModel) {
-		this.draggedStory = story;
-	}
-
-	drop(event, phaseNumber) {
-		this.draggedStory.phase = phaseNumber;
-		this._storyBackingObjectService.modify(this.draggedStory, (value) => {
-			 value.phase = this.draggedStory.phase;
-			 return value;
-		});
-	}
-
-	dragEnd(event) {
-		this.draggedStory = null;
-	}
+	
 }
