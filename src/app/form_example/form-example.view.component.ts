@@ -1,11 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-import { FormExample } from './form-example.model';
-
-
-
-
-
 
 @Component ( {
 	

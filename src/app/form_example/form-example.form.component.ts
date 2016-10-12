@@ -17,48 +17,21 @@ import { FormExample } from './form-example.model';
 
 export class FormExampleFormComponent implements OnChanges {
 
-	constructor ( private lastLocation: Location) {
-		
-	}
-
-	@Input() formModel: FormExample;
+	constructor ( ) {}
 
 	@Input() formTitle: string;
 	@Input() formLink: string;
 
-
-	ngAfterViewInit() {
-
-	}
-
-//	changeLog: string[] = [];
-	
-  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-  	/*
-    let log: string[] = [];
-    for (let propName in changes) {
-      let changedProp = changes[propName];
-      let from = JSON.stringify(changedProp.previousValue);
-      let to =   JSON.stringify(changedProp.currentValue);
-      log.push( `${propName} changed from ${from} to ${to}`);
-    }
-    this.changeLog.push(log.join(', '));
-    */
-
-  }
-
-	goBack(): void {
-  	this.lastLocation.back();
-
-	}
-
-
-	//dummyData = new FormExample(1,'Norco', 'Lepke', 'lepke@gmail.com');
-
 	submitted = false;
 
-	onsubmit() { this.submitted = true; }
+	onSubmit() { 
 
-	// TODO: Remove this when we're done
-  	// get diagnostic() { return JSON.stringify(this.dummyData); }
+		this.submitted = true;
+ 
+	}
+
+	ngAfterViewInit() {}
+	
+  	//ngOnChanges(changes: {[propKey: string]: SimpleChange}) {}
+  	ngOnChanges() {}
 }

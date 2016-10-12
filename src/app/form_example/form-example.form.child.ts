@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormExample } from './form-example.model';
 
 @Component ({
 	selector: 'form-example-child',
@@ -8,12 +9,7 @@ import { Component, Input } from '@angular/core';
 
 export class FormExampleChild {
 
-	@Input() childTitle: string;
-	@Input() childLink: string;
-
-	@Input() firstName: string;
-	@Input() lastName: string;
-	@Input() email: string;
+	@Input() formModel: FormExample;
 
 }
 

@@ -1,6 +1,5 @@
 <div class="container">
-  <h1>See if it shows up</h1>
-    <h1>Form Example</h1>
+    <h3>Form Example</h3>
     <form (ngSubmit)="onSubmit()" #formModel = "ngForm">
       <div class="form-group">
         <label for="firstName">First Name</label>
@@ -19,14 +18,19 @@
         <input type="text" class="form-control" id="email" name="email"
         [(ngModel)] = "formModel.email">
       </div>
+      <div class="form-group">
+        <label for="mobileNumber">Mobile</label>
+        <input type="text" class="form-control" id="mobileNumber" name="mobileNumber"
+        [(ngModel)] = "formModel.mobileNumber">
+      </div>      
       <button type="Submit" name="btnSubmit" class="btn btn-default">Submit</button>
     </form>
 </div>
 <br>
 <br>
-    <div>
-         <button type="button" name="backButton" class="md-button" (click)="goBack()">Back</button>
-    </div>
-<form-example-child [childTitle]="'form-example-child'" [childLink]="'form-child'" [firstName]='formModel.firstName' [lastName]='formModel.lastName' [email]='formModel.email'>  
-</form-example-child>
+<div>
+    <button md-button><a routerLink={{Dashboard}} routerLinkActive="active">Home</a></button>
+</div>
+
+<form-example-child [formModel] = 'formModel'></form-example-child>
 
