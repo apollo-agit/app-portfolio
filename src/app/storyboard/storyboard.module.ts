@@ -15,12 +15,10 @@ import { StoryEdit } from './story.edit.component';
 import { StoryBoardLane } from './storyboard.lane.component';
 import { StoryPhasePipe } from './story.phase.filter';
 
-import { LocalStorageReducer } from '../common/localstorage.reducer';
-import { BrowserReducer } from '../common/browser.reducer';
+import { FluxReducer } from '../common/flux.reducer';
+import { LocalStorageService } from '../common/localstorage.service';
 
-let storyReducer = new LocalStorageReducer<StoryModel>("stories");
-
-let browserReducer = new BrowserReducer<StoryModel>('dragged');
+//let localStorageService = new LocalStorageService<StoryModel>();
 
 @NgModule({
 	 imports: [
@@ -37,8 +35,9 @@ let browserReducer = new BrowserReducer<StoryModel>('dragged');
 	  ],
 	  providers: [
 	    appRoutingProviders,
-	    { provide: 'StoryStore', useValue: storyReducer},
-	    { provide: 'BrowserStore', useValue: browserReducer}
+	    { provide: 'key', useValue: 'stories' },
+	    { provide: 'BackendService', useClass: LocalStorageService },
+	    { provide: 'StoryStore', useClass: FluxReducer }
 	  ],
 	  bootstrap: [ StoryBoard ]
 

@@ -5,7 +5,7 @@
 import {Component, Inject, Input, OnDestroy, AfterViewInit} from '@angular/core';
 
 import { StoryModel } from './story.model';
-import { AbstractReducer } from '../common/abstract.reducer';
+import { FluxReducer } from '../common/flux.reducer';
 
 @Component({
 	selector: 'storyboard-lane',
@@ -21,8 +21,8 @@ export class StoryBoardLane implements OnDestroy, AfterViewInit {
 
 	stories: StoryModel[];
 
-	constructor(@Inject('BrowserStore') private _browserReducer: AbstractReducer<StoryModel>,
-	@Inject('StoryStore') private _localStoragereducer: AbstractReducer<StoryModel>  ) {
+	constructor(@Inject('DragStore') private _browserReducer: FluxReducer<StoryModel>,
+	@Inject('StoryStore') private _localStoragereducer: FluxReducer<StoryModel>  ) {
 
 
 	}

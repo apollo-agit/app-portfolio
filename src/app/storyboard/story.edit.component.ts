@@ -4,7 +4,7 @@
 
 import {Component, Inject} from '@angular/core';
 import { StoryModel } from './story.model';
-import { AbstractReducer } from '../common/abstract.reducer';
+import { FluxReducer } from '../common/flux.reducer';
 
 @Component({
 	selector: 'story-edit',
@@ -16,7 +16,7 @@ export class StoryEdit {
 
 	story: storyInput;
 
-	constructor(@Inject('StoryStore') private _storyBackingObjectService: AbstractReducer<StoryModel>) {
+	constructor(@Inject('StoryStore') private _storyBackingObjectService: FluxReducer<StoryModel>) {
 			this.story = {title: '', description: '', points: 0};
 		}
 
