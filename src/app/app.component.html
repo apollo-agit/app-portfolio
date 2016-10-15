@@ -1,6 +1,11 @@
 <md-sidenav-layout [class.m2app-dark]="isDarkTheme">
     <md-sidenav #sidenav mode="side" class="app-sidenav">
-        Sidenav
+        <h3>Portfolio Navigation</h3>
+        <ul>
+            <li><a routerLink="/">Dashboard</a></li>
+            <li><a routerLink="/storyboard">StoryBoard</a></li>
+            <li><a routerLink="/form">Application Forms</a></li>
+        </ul>
     </md-sidenav>
     <md-toolbar color="primary">
         <button class="app-icon-button" (click)="sidenav.toggle()">

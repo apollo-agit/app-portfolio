@@ -15,11 +15,11 @@ import { FormExampleModule } from './form_example/form-example.module'; // added
 @NgModule({
   imports: [
     BrowserModule,
-    appRoutes,
     MaterialModule.forRoot(),
     DashboardModule,
     StoryBoardModule, 
-    FormExampleModule
+    FormExampleModule,
+    appRoutes
   ],
   declarations: [
     AppComponent
