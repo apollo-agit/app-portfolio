@@ -1,36 +1,26 @@
 <div class="container">
-    <h3>Form Example</h3>
-    <form (ngSubmit)="onSubmit()" #formModel = "ngForm">
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName"
-        required
-        class="form-control" name="firstName"
-        [(ngModel)] = "formModel.firstName" >
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" name="lastName"
-        [(ngModel)] = "formModel.lastName">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" id="email" name="email"
-        [(ngModel)] = "formModel.email">
-      </div>
-      <div class="form-group">
-        <label for="mobileNumber">Mobile</label>
-        <input type="text" class="form-control" id="mobileNumber" name="mobileNumber"
-        [(ngModel)] = "formModel.mobileNumber">
-      </div>      
-      <button type="Submit" name="btnSubmit" class="btn btn-default">Submit</button>
-    </form>
+    <md-card>
+        <h3>Form Example</h3>
+        <form (ngSubmit)="onSubmit()" #formModel="ngForm">
+            <div class="form-group">
+                <md-input placeholder="First Name" id="firstName" required class="form-control" name="firstName" [(ngModel)]="formModel.firstName"></md-input>
+            </div>
+            <div class="form-group">
+                <md-input placeholder="Last Name" class="form-control" id="lastName" name="lastName" [(ngModel)]="formModel.lastName"></md-input>
+            </div>
+            <div class="form-group">
+                <md-input placeholder="Email" class="form-control" id="email" name="email" [(ngModel)]="formModel.email"></md-input>
+            </div>
+            <div class="form-group">
+                <md-input placeholder="Mobile" class="form-control" id="mobileNumber" name="mobileNumber" [(ngModel)]="formModel.mobileNumber"></md-input>
+            </div>
+            <button md-raised-button type="Submit" name="btnSubmit" class="btn btn-default">Submit</button>
+        </form>
+    </md-card>
 </div>
-<br>
-<br>
-<div>
-    <button md-button><a routerLink={{Dashboard}} routerLinkActive="active">Home</a></button>
-</div>
-
-<form-example-child [formModel] = 'formModel'></form-example-child>
-
+<md-card>
+    <div>
+        <button md-raised-button color="primary" routerLink=Dashboard routerLinkActive="active">Home</button>
+    </div>
+    <form-example-child [formModel]='formModel'></form-example-child>
+</md-card>

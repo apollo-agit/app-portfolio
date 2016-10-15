@@ -5,10 +5,13 @@ import { appRoutes, appRoutingProviders } from '../common/app.routes';
 import { Dashboard } from './dashboard.view.component';
 import { DashboardCard } from './dashboard.card.component';
 
+import { MaterialModule } from '@angular/material';
+
 
 @NgModule({
   imports: [
     BrowserModule,
+    MaterialModule.forRoot(),
     appRoutes
   ],
   declarations: [

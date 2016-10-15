@@ -38,7 +38,8 @@ module.exports = {
 
     sassLoader: {
         includePaths: [
-            helpers.root('node_modules/font-awesome/scss/')
+            helpers.root('node_modules/font-awesome/scss/'),
+            helpers.root('node_modules/@angular/material/')
         ]
     },
 

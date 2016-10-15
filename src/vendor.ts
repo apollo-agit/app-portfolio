@@ -10,17 +10,14 @@ import '@angular/common';
 import '@angular/http';
 import '@angular/router';
 
-//prime ng
-import 'primeng/primeng';
-require('../node_modules/primeng/resources/themes/le-frog/theme.css');
-require('../node_modules/primeng/resources/primeng.css');
-
-//
-import 'bootstrap';
-require('../node_modules/bootstrap/dist/css/bootstrap.css')
-
 // RxJS
 import 'rxjs';
 
 //Immutable JS
 import 'immutable';
+
+//HammerJS
+import 'hammerjs';
+
+// Material Design
+import '@angular/material';

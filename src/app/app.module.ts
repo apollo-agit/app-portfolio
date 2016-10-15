@@ -7,7 +7,7 @@ import { appRoutes, appRoutingProviders } from './common/app.routes';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { StoryBoardModule } from './storyboard/storyboard.module';
 
-import { PrimeModule } from './common/prime.module';
+import { MaterialModule } from '@angular/material';
 
 import { FormExampleModule } from './form_example/form-example.module'; // added by Devesh
 
@@ -16,10 +16,10 @@ import { FormExampleModule } from './form_example/form-example.module'; // added
   imports: [
     BrowserModule,
     appRoutes,
+    MaterialModule.forRoot(),
     DashboardModule,
-    StoryBoardModule,
-    PrimeModule
-    , FormExampleModule //added by Devesh
+    StoryBoardModule, 
+    FormExampleModule
   ],
   declarations: [
     AppComponent

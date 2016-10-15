@@ -7,7 +7,6 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 
 import { appRoutes, appRoutingProviders } from '../common/app.routes';
-import { PrimeModule } from '../common/prime.module';
 
 import { StoryBoard } from './storyboard.view.component';
 import { StoryModel } from './story.model';
@@ -24,8 +23,8 @@ import { LocalStorageService } from '../common/localstorage.service';
 	 imports: [
 	    BrowserModule,
 	    FormsModule,
-	    appRoutes,
-	    PrimeModule
+	    appRoutes
+
 	  ],
 	  declarations: [
 	    StoryBoard,

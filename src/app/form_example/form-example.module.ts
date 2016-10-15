@@ -6,6 +6,7 @@ import { FormExampleComponent } from './form-example.view.component';
 import { FormExampleFormComponent } from './form-example.form.component';
 
 import { FormExampleChild } from './form-example.form.child';
+import { MaterialModule } from '@angular/material';
 
 
 
@@ -14,6 +15,7 @@ import { FormExampleChild } from './form-example.form.child';
   imports: [
     BrowserModule,
     appRoutes,
+    MaterialModule.forRoot(),
     FormsModule
   ],
   declarations: [

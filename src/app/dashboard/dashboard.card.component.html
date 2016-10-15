@@ -1,4 +1,4 @@
-<div>
+ <md-card>
     <p>{{ appTitle }}
     </p>
     <div>
@@ -6,6 +6,6 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
     </div>
     <div>
-        <button md-button><a routerLink="/{{ appLink }}" routerLinkActive="active">Go to App</a></button>
+        <button md-raised-button color="primary" [routerLink]="[appLink]" >Go to App</button>
     </div>
-</div>
+ </md-card>
