@@ -1,13 +1,10 @@
-<div>Story Board</div>
-<div>
-    <story-edit></story-edit>
-</div>
-<button type="button" pButton label="Basic" (click)="op1.toggle($event)"></button>
-<div class="ui-grid ui-grid-pad ui-grid-responsive">
-    <div class="ui-grid-row">
-        <storyboard-lane phase='1' class="flow"></storyboard-lane>
-        <storyboard-lane phase='2' class="flow"></storyboard-lane>
-        <storyboard-lane phase='3' class="flow"></storyboard-lane>
-        <storyboard-lane phase='4' class="flow"></storyboard-lane>
-    </div>
-</div>
+<md-grid-list cols="4" gutterSize="4px" rowHeight="400px">
+   <md-grid-tile><storyboard-lane [phase]="1"></storyboard-lane></md-grid-tile>
+   <md-grid-tile></md-grid-tile>
+   <md-grid-tile></md-grid-tile>
+   <md-grid-tile></md-grid-tile>
+</md-grid-list>
+
+<span class="app-action">
+  <button md-fab (click)="toggleEdit()"><md-icon>add circle</md-icon></button>
+</span>

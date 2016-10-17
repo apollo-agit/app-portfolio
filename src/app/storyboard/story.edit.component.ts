@@ -1,8 +1,9 @@
 /*
 * Component for editing story
 */
-
 import {Component, Inject} from '@angular/core';
+import { MdDialogRef } from '@angular/material';
+
 import { StoryModel } from './story.model';
 import { FluxReducer } from '../common/flux.reducer';
 
@@ -16,7 +17,8 @@ export class StoryEdit {
 
 	story: storyInput;
 
-	constructor(@Inject('StoryStore') private _storyBackingObjectService: FluxReducer<StoryModel>) {
+	constructor(public dialogRef: MdDialogRef<StoryEdit>,
+		@Inject('StoryStore') private _storyBackingObjectService: FluxReducer<StoryModel>) {
 			this.story = {title: '', description: '', points: 0};
 		}
 
@@ -24,6 +26,7 @@ export class StoryEdit {
 		let model: StoryModel = {title: this.story.title, description: this.story.description, 
 			points: this.story.points, phase: 1};
 		this._storyBackingObjectService.add(model);
+		this.dialogRef.close();
 	}
 }
 

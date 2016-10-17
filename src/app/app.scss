@@ -2,24 +2,26 @@
 * main sass 
 */
 
+//Font Awesome import
 $fa-font-path: '~font-awesome/fonts';
-
 @import 'font-awesome';
-
-@import 'storyboard/storyboard.view.component';
 
 
 // Material Theming
 @import 'core/theming/all-theme';
 
-// Include non-theme styles for core.
-@include md-core();
-
 // Define a theme.
 $primary: md-palette($md-deep-purple);
 $accent:  md-palette($md-amber, A200, A100, A400);
-
 $theme: md-light-theme($primary, $accent);
+
+
+//storyboard component styles
+@import 'storyboard/storyboard.view.component';
+
+
+// Include non-theme styles for core.
+@include md-core();
 
 // Include all theme styles for the components.
 @include angular-material-theme($theme);

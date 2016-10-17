@@ -5,6 +5,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
 import { appRoutes, appRoutingProviders } from '../common/app.routes';
 
@@ -23,7 +24,8 @@ import { LocalStorageService } from '../common/localstorage.service';
 	 imports: [
 	    BrowserModule,
 	    FormsModule,
-	    appRoutes
+	    appRoutes,
+	    MaterialModule.forRoot()
 
 	  ],
 	  declarations: [
@@ -31,6 +33,9 @@ import { LocalStorageService } from '../common/localstorage.service';
 	    StoryEdit,
 	    StoryBoardLane,
 	    StoryPhasePipe
+	  ],
+	  entryComponents: [
+	  	StoryEdit
 	  ],
 	  providers: [
 	    appRoutingProviders,

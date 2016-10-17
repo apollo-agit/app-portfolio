@@ -1,8 +1,9 @@
-<div class="ui-grid-col-4 ui-widget-content" pDroppable="stories" pDraggable="stories" (onDrop)="drop($event)" [ngClass]="{'ui-state-highlight':draggedStory}">
-    <ul style="margin:0;padding:0">
-        <li *ngFor="let story of (stories | StoryPhase: (phase))" class="ui-state-default ui-helper-clearfix" pDraggable="stories" (onDragStart)="dragStart($event,story)" (onDragEnd)="dragEnd($event)">
-            <i class="fa fa-arrows fa-2x" style="float:right;margin-top:8px"></i>
-            <div style="margin:8px 0 0 8px;float:left">{{story.title}} - {{story.phase}}</div>
-        </li>
-    </ul>
-</div>
+<ul style="margin:0;padding:0">
+    <li *ngFor="let story of (stories | StoryPhase: (phase))">
+        <md-card>
+            <md-card-title>{{ story.title }}</md-card-title>
+            <md-card-subtitle>Points: {{ story.points }}</md-card-subtitle>
+            <md-card-content>{{ story.title }}</md-card-content>
+        </md-card>
+    </li>
+</ul>
