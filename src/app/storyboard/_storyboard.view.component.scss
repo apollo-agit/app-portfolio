@@ -1,6 +1,26 @@
 
 
-md-grid-tile {
+md-grid-tile.sb-grid {
 
 	background: md-color($primary);
+
+	figure {
+		display: inline;	
+	}
+}
+
+
+ul.sb-grid {
+
+	list-style-type: none;
+	width: 100%;
+
+	-webkit-padding-start: 0px;
+
+
+	li {
+
+		width: 100%;
+		display:inline-block
+	}
 }

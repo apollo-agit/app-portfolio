@@ -13,6 +13,7 @@ import { StoryBoard } from './storyboard.view.component';
 import { StoryModel } from './story.model';
 import { StoryEdit } from './story.edit.component';
 import { StoryBoardLane } from './storyboard.lane.component';
+import { StoryCard } from './story.card.component';
 import { StoryPhasePipe } from './story.phase.filter';
 
 import { FluxReducer } from '../common/flux.reducer';
@@ -32,7 +33,8 @@ import { LocalStorageService } from '../common/localstorage.service';
 	    StoryBoard,
 	    StoryEdit,
 	    StoryBoardLane,
-	    StoryPhasePipe
+	    StoryPhasePipe,
+	    StoryCard
 	  ],
 	  entryComponents: [
 	  	StoryEdit
