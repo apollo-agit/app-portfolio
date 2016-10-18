@@ -1,0 +1,47 @@
+// Simplified Grid System for App
+
+$grid-padding: 0.3em;
+$grid-small: 30em; 
+$grid-medium: 50em; 
+$grid-large: 68.750em; 
+$grid-column-start: 1;
+$grid-column-end: 12;
+$grid-container-width: 100%;
+
+
+@mixin grid-system ($grid-padding: $grid-padding,
+$small: $grid-small,
+$medium: grid-medium, 
+$large: $grid-large,
+$column-start: $grid-column-start,
+$column-end: $grid-column-end,
+$container-width: $grid-container-width) {
+
+	* {
+	    margin: 0;
+	    padding: 0;
+	    box-sizing: border-box;
+	}
+
+	.container {
+		margin: 0 auto;
+		max-width: $container-width;
+
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
+
+

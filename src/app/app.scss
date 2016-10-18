@@ -2,6 +2,9 @@
 * main sass 
 */
 
+@import './common/grid/grid.system.scss';
+@include grid-system;
+
 //Font Awesome import
 $fa-font-path: '~font-awesome/fonts';
 @import 'font-awesome';
