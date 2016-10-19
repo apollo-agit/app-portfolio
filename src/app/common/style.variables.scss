@@ -1,0 +1,9 @@
+// Variables for Global Styling
+
+// Material Theming
+@import 'core/theming/all-theme';
+
+// Define a theme.
+$primary: md-palette($md-deep-purple);
+$accent:  md-palette($md-amber, A200, A100, A400);
+$theme: md-light-theme($primary, $accent);

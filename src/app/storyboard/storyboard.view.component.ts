@@ -4,6 +4,9 @@
 import { Component, AfterViewInit, Inject, ViewContainerRef } from '@angular/core';
 import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
 
+//storyboard component styles
+import './storyboard.view.component.style.scss';
+
 import { StoryEdit } from './story.edit.component';
 import { StoryModel } from './story.model';
 import { FluxReducer } from '../common/flux.reducer';

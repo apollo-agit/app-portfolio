@@ -1,4 +1,9 @@
 
+@import '../common/style.variables';
+@import '../common/grid/grid.system.scss';
+
+@include grid-system;
+
 
 md-grid-tile.sb-grid {
 

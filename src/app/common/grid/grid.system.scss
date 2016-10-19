@@ -7,15 +7,20 @@ $grid-large: 68.750em;
 $grid-column-start: 1;
 $grid-column-end: 12;
 $grid-container-width: 100%;
+$grid-percentage-widths: 25, 40, 60, 75;
 
 
 @mixin grid-system ($grid-padding: $grid-padding,
 $small: $grid-small,
-$medium: grid-medium, 
+$medium: $grid-medium, 
 $large: $grid-large,
 $column-start: $grid-column-start,
 $column-end: $grid-column-end,
-$container-width: $grid-container-width) {
+$container-width: $grid-container-width,
+$percentage-widths: $grid-percentage-widths) {
+
+	$full:              100%;
+	$half:              100% / 2;
 
 	* {
 	    margin: 0;
@@ -23,7 +28,7 @@ $container-width: $grid-container-width) {
 	    box-sizing: border-box;
 	}
 
-	.container {
+	.grid-container {
 		margin: 0 auto;
 		max-width: $container-width;
 
@@ -34,6 +39,67 @@ $container-width: $grid-container-width) {
 		}
 	}
 
+	[class*='grid-'] {
+    	float: left;
+    	padding: $grid-padding;
+	}
+
+	@for $i from $column-start through $column-end {
+    	.grid-#{$i} {
+        	width: $full / $i;
+    	}
+	}
+ 
+	@each $i in $percentage-widths {
+    	.grid-#{$i} {
+        	width: percentage($i / 100);
+    	}
+	}
+
+	// Mobile
+	@media (max-width: $small) {
+	    @for $i from $column-start through $column-end {
+	        .grid-#{$i} {
+	            width: $full
+	        }
+	    }
+	}
+
+	// Portrait Tablet
+	@media (min-width: $small) and (max-width: $medium) {
+	    .grid-4,
+	    .grid-6,
+	    .grid-8,
+	    .grid-10,
+	    .grid-12 {
+	        width: $half;
+	    }
+
+	    .grid-1,
+	    .grid-2,
+	    .grid-3,
+	    .grid-5,
+	    .grid-7,
+	    .grid-9,
+	    .grid-11 {
+	        width: $full;
+	    }
+	}
+
+	// Landscape Tablet
+	@media (min-width: $medium) and (max-width: $large) {
+	    .grid-2,
+	    .grid-7 {
+	        width: $full;
+	    }
+
+	    .grid-4,
+	    .grid-8,
+	    .grid-10,
+	    .grid-12 {
+	        width: $half;
+	    }
+	}
 
 }
 
