@@ -6,7 +6,8 @@
 
 
 .sb-lane {
-    
+    min-height: 30em;  
+
 	border:1px;
 	border-style:solid;
 	border-color:black;
@@ -15,27 +16,6 @@
 
     h3 {
         text-align: center;
-    }
-
-    ul.sb-grid {
-
-        min-height: 30em;
-
-        list-style-type: none;
-        width: 100%;
-        -webkit-padding-start: 0px;
-
-        li {
-
-            width: 100%;
-            display: inline-block;
-
-            .sb-card-container {
-
-                min-width: 15em;
-            }
-
-        }
     }
 
 }

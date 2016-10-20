@@ -1,4 +1,4 @@
-<div class="sb-card-container" [dragEnabled]="true" dnd-draggable>
+<div class="sb-card-container" [dragEnabled]="true" [dragData]=story dnd-draggable >
     <md-card>
         <md-card-title>{{ story.title }}</md-card-title>
         <md-card-subtitle>Points: {{ story.points }}</md-card-subtitle>

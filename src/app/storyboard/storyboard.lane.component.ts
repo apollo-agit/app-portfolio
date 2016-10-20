@@ -4,6 +4,7 @@
 
 import {Component, Inject, Input, OnDestroy, AfterViewInit} from '@angular/core';
 
+
 import { StoryModel } from './story.model';
 import { FluxReducer } from '../common/flux.reducer';
 
@@ -48,11 +49,12 @@ export class StoryBoardLane implements OnDestroy, AfterViewInit {
 		this._browserReducer.add(story);
 	}
 
-	drop(event) {
-		console.log('drop');
-		this.draggedStory.phase = this.phase;
-		this._localStoragereducer.modify(this.draggedStory, (value) => {
-			 value.phase = this.draggedStory.phase;
+	phaseDrop(event) {
+		console.log(event);
+		let story = event.dragData;
+		story.phase = this.phase;
+		this._localStoragereducer.modify(story, (value) => {
+			 value.phase = story.phase;
 			 return value;
 		});
 	}

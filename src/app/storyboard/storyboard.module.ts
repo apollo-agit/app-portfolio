@@ -30,6 +30,7 @@ import { LocalStorageService } from '../common/localstorage.service';
 	    MaterialModule.forRoot(),
 	    DndModule.forRoot()
 	  ],
+	  exports: [BrowserModule, DndModule],
 	  declarations: [
 	    StoryBoard,
 	    StoryEdit,
