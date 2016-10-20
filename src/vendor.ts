@@ -21,3 +21,7 @@ import 'hammerjs';
 
 // Material Design
 import '@angular/material';
+
+// DND (drag n drop)
+import 'ng2-dnd';
+

@@ -1,8 +1,8 @@
-<div class="sb-lane">
+<div class="sb-lane" dnd-droppable>
 	<h3>{{ laneTitle }}</h3>
-	<ul class="sb-grid">
+	<ul class="sb-grid" dnd-droppable >
 	    <li *ngFor="let story of (stories | StoryPhase: (phase))">
-	       <story-card [story]=story></story-card>
+	       <story-card [story]=story ></story-card>
 	    </li>
 	</ul>
 </div>

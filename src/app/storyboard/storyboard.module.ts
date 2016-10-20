@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import { DndModule } from 'ng2-dnd';
 
 import { appRoutes, appRoutingProviders } from '../common/app.routes';
 
@@ -26,8 +27,8 @@ import { LocalStorageService } from '../common/localstorage.service';
 	    BrowserModule,
 	    FormsModule,
 	    appRoutes,
-	    MaterialModule.forRoot()
-
+	    MaterialModule.forRoot(),
+	    DndModule.forRoot()
 	  ],
 	  declarations: [
 	    StoryBoard,

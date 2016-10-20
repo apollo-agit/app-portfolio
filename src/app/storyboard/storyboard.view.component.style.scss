@@ -6,7 +6,7 @@
 
 
 .sb-lane {
-
+    
 	border:1px;
 	border-style:solid;
 	border-color:black;
@@ -18,6 +18,8 @@
     }
 
     ul.sb-grid {
+
+        min-height: 30em;
 
         list-style-type: none;
         width: 100%;

@@ -23,8 +23,7 @@ export class StoryBoardLane implements OnDestroy, AfterViewInit {
 	stories: StoryModel[];
 
 	constructor(@Inject('DragStore') private _browserReducer: FluxReducer<StoryModel>,
-	@Inject('StoryStore') private _localStoragereducer: FluxReducer<StoryModel>  ) {
-
+	@Inject('StoryStore') private _localStoragereducer: FluxReducer<StoryModel>) {
 
 	}
 
