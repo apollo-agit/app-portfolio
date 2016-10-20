@@ -88,16 +88,8 @@ $percentage-widths: $grid-percentage-widths) {
 
 	// Landscape Tablet
 	@media (min-width: $medium) and (max-width: $large) {
-	    .grid-2,
-	    .grid-7 {
+	    .grid-2 {
 	        width: $full;
-	    }
-
-	    .grid-4,
-	    .grid-8,
-	    .grid-10,
-	    .grid-12 {
-	        width: $half;
 	    }
 	}
 

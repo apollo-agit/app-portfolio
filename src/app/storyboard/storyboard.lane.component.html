@@ -1,5 +1,8 @@
-<ul class="sb-grid">
-    <li *ngFor="let story of (stories | StoryPhase: (phase))">
-       <story-card [story]=story></story-card>
-    </li>
-</ul>
+<div class="sb-lane">
+	<h3>{{ laneTitle }}</h3>
+	<ul class="sb-grid">
+	    <li *ngFor="let story of (stories | StoryPhase: (phase))">
+	       <story-card [story]=story></story-card>
+	    </li>
+	</ul>
+</div>

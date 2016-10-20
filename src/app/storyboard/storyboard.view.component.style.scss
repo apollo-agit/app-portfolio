@@ -5,27 +5,36 @@
 @include grid-system;
 
 
-md-grid-tile.sb-grid {
+.sb-lane {
 
-	background: md-color($primary);
+	border:1px;
+	border-style:solid;
+	border-color:black;
 
-	figure {
-		display: inline;	
-	}
+	background: md-color($accent);
+
+    h3 {
+        text-align: center;
+    }
+
+    ul.sb-grid {
+
+        list-style-type: none;
+        width: 100%;
+        -webkit-padding-start: 0px;
+
+        li {
+
+            width: 100%;
+            display: inline-block;
+
+            .sb-card-container {
+
+                min-width: 15em;
+            }
+
+        }
+    }
+
 }
 
-
-ul.sb-grid {
-
-	list-style-type: none;
-	width: 100%;
-
-	-webkit-padding-start: 0px;
-
-
-	li {
-
-		width: 100%;
-		display:inline-block
-	}
-}

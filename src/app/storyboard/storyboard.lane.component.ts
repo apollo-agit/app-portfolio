@@ -16,6 +16,7 @@ import { FluxReducer } from '../common/flux.reducer';
 export class StoryBoardLane implements OnDestroy, AfterViewInit {
 
 	@Input() phase: number;
+	@Input() laneTitle: string;
 
 	draggedStory: StoryModel;
 

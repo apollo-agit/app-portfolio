@@ -1,18 +1,17 @@
-<md-grid-list cols="4" gutterSize="4px" rowHeight="400px">
-   <md-grid-tile class="sb-grid"><storyboard-lane [phase]="1"></storyboard-lane></md-grid-tile>
-   <md-grid-tile class="sb-grid"></md-grid-tile>
-   <md-grid-tile class="sb-grid"></md-grid-tile>
-   <md-grid-tile class="sb-grid"></md-grid-tile>
-</md-grid-list>
-
+<div class="grid-container">
+    <div class="grid-4">
+        <storyboard-lane [phase]="1" [laneTitle]="'To Do'"></storyboard-lane>
+    </div>
+    <div class="grid-4">
+        <storyboard-lane [phase]="1" [laneTitle]="'In Developement'"></storyboard-lane>
+    </div>
+    <div class="grid-4">
+        <storyboard-lane [phase]="1" [laneTitle]="'In QA'"></storyboard-lane>
+    </div>
+    <div class="grid-4">
+        <storyboard-lane [phase]="1" [laneTitle]="'Done'"></storyboard-lane>
+    </div>
+</div>
 <span class="app-action">
   <button md-fab (click)="toggleEdit()"><md-icon>add circle</md-icon></button>
 </span>
-
-
- <div class="grid-container">
-   <div class="grid-4">This is my first grid</div>
-   <div class="grid-4">This is my first grid</div>
-   <div class="grid-4">This is my first grid</div>
-   <div class="grid-4">This is my first grid</div>
- </div>
